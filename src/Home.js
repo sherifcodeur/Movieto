@@ -1,24 +1,24 @@
-
+import {useState} from 'react'
 
 const Home = () => {
 
-    const handleClick = (e)=>{
+    const [name,setName] = useState('mario')
 
-        console.log("you clicked",e)
+    const handleClick = ()=>{
+
+        setName("fifo")
+
+        console.log("you clicked "+name)
     }
 
-    const handleClickos = (name,e)=>{
-
-        console.log('you clicked' + name,e)
-
-    }
+   
     return ( 
 
         <div className="home">
             <h2>Homepage</h2>
             this is our homepage
-            <button onClick={handleClick}>clicke me robert</button>
-            <button onClick = {(e)=>{handleClickos("ismael",e)}}>click mario</button>
+            <button onClick={handleClick}>click me {name}</button>
+            
         </div>
 
      );
