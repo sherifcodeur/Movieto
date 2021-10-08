@@ -1,7 +1,8 @@
 
 
 import Navbar from './Navbar';
-import Home from './Home';
+
+import HomePage from './HomePage';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       <div className="content">
         <h1>Our first Component is {title}</h1>
 
-        <Home />
+        <HomePage />
 
         <span>{person.name}</span>
         
