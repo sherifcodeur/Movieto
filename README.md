@@ -1,6 +1,5 @@
 
-# Store Business Niches Ideas 
-
+# A DATABASE OF Movies AND SERIES 
 Created with React
 
 
