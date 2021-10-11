@@ -1,39 +1,9 @@
-import {useEffect, useState} from 'react'
 
 import FilmList from './FilmList'
-
+import useFetch from './useFetch'
 const Home = () => {
 
-    const [data,setData] = useState(null);
-
-    const [loaded,setLoaded] = useState(true);
-
-    const [error,setError] = useState(null);
-    
-    useEffect(()=>{
-
-        fetch('http://localhost:8000/films').then(response=>{
-
-            console.log(response)
-
-            if(!response.ok ){
-                throw Error('there is an error fetching data')
-            }
-            return response.json()
-        }).then(resp=>{
-
-            //console.log(resp)
-            setError(null)
-            setData(resp)
-            setLoaded(false)
-
-        }).catch(err=>{
-            
-            setError(err.message)
-            setLoaded(false)
-        })
-
-    },[])
+    const{data,error,loaded} = useFetch('http://localhost:8000/films')
    
     return ( 
 
