@@ -1,17 +1,42 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 const Create = () => {
 
-    const [title,setTitle] = useState('');
+    const [name,setName] = useState('');
     const [summary,setSummary] = useState('');
     const [country,setCountry] = useState('uk');
+
+    const history = useHistory();
+    const handleSubmit = (e)=>{
+
+
+        e.preventDefault()
+
+        const film = {name,summary,country}
+
+        console.log(film)
+
+        fetch(`http://localhost:8000/films`,{
+            method:"POST",
+            headers:{ "Content-Type": "application/json" },
+            body:JSON.stringify(film)
+        }).then(()=>{
+
+            history.push('/')
+        }
+        
+        )
+
+
+    }
 
     return ( 
 
         <div className="create">
 
 
-            <form action="">
+            <form onSubmit={handleSubmit}>
 
                 <div>
                     <label htmlFor="name">Title Of Movie</label>
@@ -19,9 +44,9 @@ const Create = () => {
                     type="text"
                     required
                     name=""
-                    value={title}
+                    value={name}
                     id="name"
-                    onChange={(e)=>{ setTitle(e.target.value)}}
+                    onChange={(e)=>{ setName(e.target.value)}}
                     
                     />
                 </div>
@@ -57,9 +82,7 @@ const Create = () => {
 
             </form>
 
-            {title}
-            {summary}
-            {country}
+            
 
 
         </div>

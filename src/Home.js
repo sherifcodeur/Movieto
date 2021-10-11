@@ -8,8 +8,8 @@ const Home = () => {
     return ( 
 
         <div className="home">
-            <h2>Homepage</h2>
-            this is our homepage
+            <h2>All Movies And Series</h2>
+            
             {error && <div>{error}</div>}
             {loaded && <div> Loading...</div>}
            { data && <FilmList data = {data} />}

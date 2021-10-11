@@ -13,6 +13,7 @@ import {
 import Contact from './Contact';
 import Filmdetail from './Filmdetail';
 import Create from './Create';
+import Notfound from './Notfound';
 
 function App() {
 
@@ -46,6 +47,10 @@ function App() {
           <Route path="/films/:id">
 
               <Filmdetail />
+          </Route>
+          <Route path="*">
+
+            <Notfound />
           </Route>
         </Switch>
         

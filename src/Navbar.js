@@ -10,7 +10,7 @@ const Navbar = () => {
        
 
         <nav className="navbar">
-            <h1>Business Niches</h1>
+            <h1>Movies And Series Database</h1>
             <div className="links">
                 <Link to="/">Home</Link>
                 <Link to="/contact">Contact</Link>
